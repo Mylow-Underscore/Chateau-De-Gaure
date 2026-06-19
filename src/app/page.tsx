@@ -995,14 +995,10 @@ const CSS = `
       linear-gradient(180deg, rgba(28,8,8,0.55) 0%, rgba(28,8,8,0.35) 40%, rgba(20,6,6,0.75) 100%),
       radial-gradient(ellipse 60% 50% at 70% 30%, rgba(200,169,110,0.10) 0%, transparent 70%);
   }
-  @media (prefers-reduced-motion: reduce) {
-    .hero-video { display: none; }
-    .hero-video-wrap { background: linear-gradient(145deg, #2A0808 0%, #1C0505 40%, #3A1A0A 70%, #1C1C1C 100%); }
-  }
   .hero-content { position: relative; z-index: 1; text-align: center; padding: 2rem 1.5rem; max-width: 700px; }
   .hero-eyebrow { color: var(--gold); font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 1.5rem; font-weight: 400; }
   .hero-vine { width: 200px; margin: 0 auto 1.5rem; display: block; }
-  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem,9vw,7rem); font-weight: 300; color: var(--stone); letter-spacing: 0.08em; line-height: 1; margin-bottom: 1.5rem; }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem,9vw,6rem); font-weight: 300; color: var(--stone); letter-spacing: 0.07em; line-height: 1; margin-bottom: 1.5rem; }
   .hero-title-de { color: var(--gold); font-style: italic; }
   .hero-sub { color: rgba(245,240,232,0.7); font-size: clamp(0.9rem,2vw,1.05rem); letter-spacing: 0.06em; margin-bottom: 2.5rem; line-height: 1.7; }
   .hero-cta-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
@@ -1010,6 +1006,10 @@ const CSS = `
   .hero-rating-num { color: var(--stone); font-weight: 600; margin-left: 0.3rem; }
   .hero-rating-count { color: rgba(245,240,232,0.5); font-size: 0.75rem; }
   .hero-scroll { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; color: var(--gold); text-decoration: none; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; }
+  @media (max-width: 900px) {
+    .hero-content { position: relative; z-index: 1; text-align: center; padding: 2rem 1.5rem; max-width: 100%; }
+    .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem,9vw,2rem); font-weight: 300; color: var(--stone); letter-spacing: 0.07em; line-height: 1; margin-bottom: 1.5rem; }
+  }
 
   .btn { display: inline-block; text-decoration: none; cursor: pointer; border: none; font-family: 'Raleway', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.85rem 2rem; transition: all 0.25s; }
   .btn--gold { background: var(--gold); color: var(--dark); }
