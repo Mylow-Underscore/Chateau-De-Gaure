@@ -979,7 +979,7 @@ const CSS = `
   .nav-ig { display: flex; align-items: center; }
   .nav-burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
   .nav-burger span { display: block; width: 24px; height: 1.5px; background: var(--stone); }
-  @media (max-width: 900px) {
+  @media (max-width: 950px) {
     .nav { padding: 1rem 1.5rem; background: rgba(28,10,10,0.92); }
     .nav-burger { display: flex; }
     .nav-links { display: none; flex-direction: column; gap: 1.5rem; position: absolute; top: 100%; left: 0; right: 0; background: rgba(28,10,10,0.97); padding: 2rem; }
@@ -995,7 +995,7 @@ const CSS = `
       linear-gradient(180deg, rgba(28,8,8,0.55) 0%, rgba(28,8,8,0.35) 40%, rgba(20,6,6,0.75) 100%),
       radial-gradient(ellipse 60% 50% at 70% 30%, rgba(200,169,110,0.10) 0%, transparent 70%);
   }
-  .hero-content { position: relative; z-index: 1; text-align: center; padding: 2rem 1.5rem; max-width: 700px; }
+  .hero-content { position: relative; z-index: 1; text-align: center; padding: 2rem 1.5rem; max-width: 100vw; }
   .hero-eyebrow { color: var(--gold); font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 1.5rem; font-weight: 400; }
   .hero-vine { width: 200px; margin: 0 auto 1.5rem; display: block; }
   .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem,9vw,6rem); font-weight: 300; color: var(--stone); letter-spacing: 0.07em; line-height: 1; margin-bottom: 1.5rem; }
@@ -1005,10 +1005,71 @@ const CSS = `
   .hero-stars { color: var(--gold); font-size: 0.85rem; display: flex; align-items: center; justify-content: center; gap: 0.3rem; }
   .hero-rating-num { color: var(--stone); font-weight: 600; margin-left: 0.3rem; }
   .hero-rating-count { color: rgba(245,240,232,0.5); font-size: 0.75rem; }
-  .hero-scroll { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; color: var(--gold); text-decoration: none; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; }
-  @media (max-width: 900px) {
-    .hero-content { position: relative; z-index: 1; text-align: center; padding: 2rem 1.5rem; max-width: 100%; }
+  .hero-scroll { position: absolute; bottom: 2rem; left: 48%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; color: var(--gold); text-decoration: none; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; }
+  @media (max-width: 1000px) {
+    .hero { display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; background: linear-gradient(145deg, #2A0808 0%, #1C0505 40%, #3A1A0A 70%, #1C1C1C 100%); height: 900px; }
+    .hero-content { position: relative; z-index: 1; text-align: center; padding: 2rem 1.5rem; max-width: 100vw; }
     .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem,9vw,2rem); font-weight: 300; color: var(--stone); letter-spacing: 0.07em; line-height: 1; margin-bottom: 1.5rem; }
+    .hero-scroll { position: absolute; bottom: 2rem; left: 40%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; color: var(--gold); text-decoration: none; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; }
+  }
+  @media all and (orientation: portrait) {
+    .hero { display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; background: linear-gradient(145deg, #2A0808 0%, #1C0505 40%, #3A1A0A 70%, #1C1C1C 100%); }
+    .hero-content { position: relative; z-index: 1; text-align: center; padding: 2rem 1.5rem; max-width: 100vw; }
+    .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem,9vw,2rem); font-weight: 300; color: var(--stone); letter-spacing: 0.07em; line-height: 1; margin-bottom: 1.5rem; }
+    .hero-scroll { position: absolute; bottom: 2rem; left: 40%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; color: var(--gold); text-decoration: none; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; }
+  }
+  @media (max-width: 950px) {
+    .hero { min-height: 100svh; }
+
+    .hero-video-wrap { position: absolute; inset: 0; }
+    .hero-video { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+
+    .hero-content {
+      padding: 6rem 1.2rem 5rem;
+      width: 100%;
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100svh;
+    }
+
+    .hero-vine { width: 140px; margin-bottom: 1rem; }
+
+    .hero-title { font-size: clamp(2.2rem, 4vw, 3.5rem); margin-bottom: 1rem; }
+
+    .hero-sub { font-size: 0.85rem; margin-bottom: 1.8rem; letter-spacing: 0.04em; }
+
+    .hero-cta-row { flex-direction: column; align-items: center; gap: 0.75rem; margin-bottom: 1.8rem; width: 100%; }
+    .hero-cta-row .btn { width: 100%; max-width: 280px; text-align: center; }
+
+    .hero-stars { font-size: 0.78rem; flex-wrap: wrap; justify-content: center; gap: 0.2rem; }
+
+    .hero-scroll { bottom: 1.2rem; }
+  }
+
+  @media (max-width: 950px) and (orientation: landscape) {
+    .hero { min-height: 100svh; }
+
+    .hero-content {
+      padding: 2rem 1rem 2rem;
+      min-height: 100svh;
+      justify-content: center;
+    }
+
+    .hero-vine { width: 100px; margin-bottom: 0.6rem; }
+
+    .hero-title { font-size: clamp(1.8rem, 7vw, 2.6rem); margin-bottom: 0.8rem; }
+
+    .hero-sub { font-size: 0.78rem; margin-bottom: 1.2rem; }
+
+    .hero-cta-row { flex-direction: row; width: auto; margin-bottom: 1.2rem; }
+    .hero-cta-row .btn { width: auto; }
+
+    .hero-stars { font-size: 0.72rem; }
+
+    .hero-scroll { display: none; }
   }
 
   .btn { display: inline-block; text-decoration: none; cursor: pointer; border: none; font-family: 'Raleway', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.85rem 2rem; transition: all 0.25s; }
